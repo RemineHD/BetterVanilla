@@ -21,7 +21,7 @@ public class playerJoin implements Listener {
         DiscordService discordService = DiscordService.getInstance();
         if (!discordService.isUserVerified(player.getUniqueId())) {
 
-            String key = discordService.linkAccount(player.getUniqueId());
+            String key = discordService.linkAccount(player.getUniqueId(), null);
 
             player.kickPlayer(ChatColor.translateAlternateColorCodes('&', " &c&lSecurity System &8| &d&lOreCore SMP \n \n &fParece que es tu primera vez jugando en &6OreCore&f! \n &fTe damos la bienvenida, pero antes de acceder al servidor debes realizar unos sencillos pasos: \n \n &fAccede a &9Discord &f y busca por el BOT llamado: &3OreCore \n &fA continuación enviele el siguiente codigo por mensaje privado: \n &d" + key + " \n \n &fUna vez realizado esto, vuelva a conectarse al servidor. \n &6INFO: &7Si tiene algun problema contacte con cualquier miembro del equipo. \n \n &9Powered by Zaroz"));
             return;
