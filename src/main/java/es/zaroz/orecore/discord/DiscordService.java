@@ -147,7 +147,6 @@ public class DiscordService extends OreCoreService {
         pendingLink.uuid = uuid;
         pendingLink.callback = callback;
         messageListener.pendingLinks.put(key,pendingLink);
-
         return key;
     }
 
