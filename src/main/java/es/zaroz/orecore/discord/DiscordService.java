@@ -195,6 +195,7 @@ public class DiscordService extends OreCoreService {
                     return filter.getMessage().getId().equals(message.getId());
                 }, event -> {
                     event.getInteraction().deferReply();
+                    message.delete();
                     if (event.getButton().getId().equals("yes")){
                         if (!data.allowedIps.containsKey(uuid)){
                             data.allowedIps.put(uuid, new ArrayList<>());
