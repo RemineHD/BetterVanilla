@@ -164,7 +164,7 @@ public class DiscordService extends OreCoreService {
         if (ip.contains(":")){
             ip = ip.substring(0, ip.indexOf(":"));
         }
-        User user = client.getUserById(data.linkedAccounts.get(uuid));
+        User user = client.retrieveUserById(data.linkedAccounts.get(uuid)).complete();
 
         if (user == null){
             warn("User not found with id " + data.linkedAccounts.get(uuid));
