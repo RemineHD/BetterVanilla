@@ -138,13 +138,14 @@ public class DiscordService extends OreCoreService {
         return String.valueOf(new Random().nextInt(9000) + 1000);
     }
 
-    public String linkAccount(UUID uuid){
+    public String linkAccount(UUID uuid, Consumer<LinkResult> callback){
         String key = random4Digit();
         while (messageListener.pendingLinks.containsKey(key)) {
             key = random4Digit();
         }
         PendingLink pendingLink = new PendingLink();
         pendingLink.uuid = uuid;
+        pendingLink.callback = callback;
         messageListener.pendingLinks.put(key,pendingLink);
 
         return key;

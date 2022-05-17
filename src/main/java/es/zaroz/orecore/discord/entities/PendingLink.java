@@ -7,5 +7,5 @@ import java.util.function.Consumer;
 
 public class PendingLink {
     public UUID uuid;
-    //public Consumer<LinkResult> callback;
+    public Consumer<LinkResult> callback;
 }
