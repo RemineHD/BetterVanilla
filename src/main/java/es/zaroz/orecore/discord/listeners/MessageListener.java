@@ -34,7 +34,7 @@ public class MessageListener extends ListenerAdapter {
             pendingLinks.remove(content);
             event.getMessage().addReaction("✔").queue();
             data.linkedAccounts.put(link.uuid, event.getAuthor().getId());
-            link.callback.accept(LinkResult.Success);
+            //link.callback.accept(LinkResult.Success);
         }else {
             event.getMessage().addReaction("❌").queue();
         }
