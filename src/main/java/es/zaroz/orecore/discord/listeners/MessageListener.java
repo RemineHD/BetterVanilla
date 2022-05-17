@@ -35,6 +35,7 @@ public class MessageListener extends ListenerAdapter {
             event.getMessage().addReaction("✔").queue();
             data.linkedAccounts.put(link.uuid, event.getAuthor().getId());
             link.callback.accept(LinkResult.Success);
+            service.manualSave();
         }else {
             event.getMessage().addReaction("❌").queue();
         }

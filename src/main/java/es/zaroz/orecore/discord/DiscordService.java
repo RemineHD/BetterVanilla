@@ -151,6 +151,11 @@ public class DiscordService extends OreCoreService {
         return key;
     }
 
+    public void manualSave(){
+        saveData();
+        info("Manual save completed");
+    }
+
     public void verifyIp(UUID uuid, String ip, Consumer<VerifyIpResult> callback){
         if (!isUserVerified(uuid)){
             callback.accept(VerifyIpResult.UserNotLinked);
@@ -163,6 +168,7 @@ public class DiscordService extends OreCoreService {
         User user = client.getUserById(data.linkedAccounts.get(uuid));
 
         if (user == null){
+            warn("User not found with id " + data.linkedAccounts.get(uuid));
             callback.accept(VerifyIpResult.UserNotFound);
             return;
         }
