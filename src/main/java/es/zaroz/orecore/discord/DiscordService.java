@@ -26,10 +26,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.ObjectInputStream;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 import java.util.function.Consumer;
 
 public class DiscordService extends OreCoreService {
@@ -52,8 +49,9 @@ public class DiscordService extends OreCoreService {
         if(!dataFile.exists()){
             warn("Discord data file not found");
             data = new DiscordServiceData();
+            data.linkedAccounts = new HashMap<>();
+            data.allowedIps = new HashMap<>();
             saveData();
-
             return;
         }
 
