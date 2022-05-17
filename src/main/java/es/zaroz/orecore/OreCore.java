@@ -1,6 +1,10 @@
 package es.zaroz.orecore;
 
 import es.zaroz.orecore.discord.DiscordService;
+import es.zaroz.orecore.listeners.playerJoin;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -33,6 +37,10 @@ public class OreCore extends JavaPlugin {
         }
 
         initializeServices();
+
+        PluginManager pluginManager = Bukkit.getPluginManager();
+        pluginManager.registerEvents(new playerJoin(), (Plugin) this);
+
     }
 
     @Override
