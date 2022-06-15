@@ -1,0 +1,10 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:jagged_peaks": "2022-05-17 23:03:56 +0200",
+      "minecraft:meadow": "2022-05-17 23:02:36 +0200"
+    },
+    "done": false
+  },
+  "DataVersion": 2975
+}

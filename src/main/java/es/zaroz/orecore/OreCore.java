@@ -1,7 +1,9 @@
 package es.zaroz.orecore;
 
 import es.zaroz.orecore.discord.DiscordService;
+import es.zaroz.orecore.listeners.playerDeath;
 import es.zaroz.orecore.listeners.playerJoin;
+import es.zaroz.orecore.mecanicas.TreeCutter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -40,6 +42,11 @@ public class OreCore extends JavaPlugin {
 
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new playerJoin(), (Plugin) this);
+        pluginManager.registerEvents(new playerDeath(), (Plugin) this);
+
+
+        //Mecanicas
+        pluginManager.registerEvents(new TreeCutter(), (Plugin) this);
 
     }
 

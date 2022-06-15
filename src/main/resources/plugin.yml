@@ -2,3 +2,4 @@ name: OreCore
 version: 4.0
 main: es.zaroz.orecore.OreCore
 authors: ['Stay', 'Remine']
+api-version: 1.18
